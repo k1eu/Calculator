@@ -13,21 +13,25 @@ class setups {
         for every in numbers {
             every.titleLabel!.text = "\(every.tag-1)"
             every.backgroundColor = .darkGray
-            every.titleLabel?.textColor = .white
+            every.titleLabel!.textColor = .white
+            every.setTitleColor(.white, for: .normal)
             every.layer.cornerRadius = 15
         }
         for every in functions {
             switch every.tag {
             case 11...13:
                 every.backgroundColor = .lightGray
-                every.titleLabel?.textColor = .white
+                every.titleLabel!.textColor = .white
+                every.setTitleColor(.white, for: .normal)
                 every.layer.cornerRadius = 15
             case 14...18:
                 every.backgroundColor = .orange
-                every.titleLabel?.textColor = .white
+                every.setTitleColor(.white, for: .normal)
+                every.titleLabel!.textColor = .white
                 every.layer.cornerRadius = 15
             case 19:
                 every.backgroundColor = .darkGray
+                every.setTitleColor(.white, for: .normal)
                 every.layer.cornerRadius = 15
             default:
                 print("error in setting functional buttons")
@@ -98,6 +102,12 @@ class calculatorCore {
                 char = sender.titleLabel!.text!
                 result.text = char }
             case 18:
+                if charset.contains(result.text!) {
+                    char = sender.titleLabel!.text!
+                    result.text = char
+                }
+                else
+                {
                 secondNumber = Double(result.text!) as! Double
                 switch char {
                 case "%":
@@ -156,9 +166,10 @@ class calculatorCore {
                     default:
                         print("xd")
                     }
+                
                 default:
                     result.text = "Error"
-                }
+                    }}
             default:
                 print("xd")
                 
