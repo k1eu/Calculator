@@ -20,7 +20,6 @@ class ViewController: UIViewController {
         core.numberPressed(sender: sender, result: result)
     }
     @IBAction func functionKeys(_ sender: UIButton) {
-        
         core.functionKeysPressed(sender: sender, result: result)
     }
     
@@ -30,6 +29,7 @@ class ViewController: UIViewController {
         view.backgroundColor = .black
         settingUps.setbuttons(numbers: buttons, functions: buttonses)
         settingUps.setLabel(result: result, resultNumber: 0)
+        settingUps.setLogo(view: self,button: result)
     }
 
    

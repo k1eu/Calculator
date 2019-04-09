@@ -9,6 +9,8 @@
 import UIKit
 
 class setups {
+    let logo = UIImage(named: "logo")
+    
     func setbuttons(numbers: [UIButton],functions: [UIButton]) {
         for every in numbers {
             every.titleLabel!.text = "\(every.tag-1)"
@@ -37,6 +39,25 @@ class setups {
                 print("error in setting functional buttons")
             }
         }
+    }
+    
+    func setLogo(view: UIViewController, button: UILabel) {
+        let logoView = UIImageView(image: logo!)
+        logoView.translatesAutoresizingMaskIntoConstraints = false // this shit is importand , dunno what it does actually
+        view.view.addSubview(logoView)
+        logoView.topAnchor.constraint(equalTo: view.view.safeAreaLayoutGuide.topAnchor).isActive = true
+        logoView.leadingAnchor.constraint(equalTo: view.view.safeAreaLayoutGuide.leadingAnchor,constant: 10).isActive = true
+        logoView.widthAnchor.constraint(equalToConstant: 50.0).isActive = true
+        logoView.heightAnchor.constraint(equalToConstant: 50.0).isActive = true
+        
+        
+        UIView.animate(withDuration: 1, delay: 0, options: [.repeat,.autoreverse], animations: {
+            logoView.transform = CGAffineTransform.identity.scaledBy(x: 1.25, y: 1.25)
+   
+            
+        }, completion: { completion in
+            logoView.transform = CGAffineTransform.identity.scaledBy(x: 1, y: 1)
+        })
     }
     func setLabel(result:UILabel,resultNumber: Double) {
         result.text = "\(resultNumber)"
