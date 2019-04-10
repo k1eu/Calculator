@@ -89,7 +89,7 @@ class calculatorCore {
     }
     func functionKeysPressed(sender: UIButton,result:UILabel) {
         previousValue = result.text!
-        if previousValue == "0.0" || previousValue == "Error" {
+        if previousValue == "Error" {
             switch sender.tag {
             case 11:
                 result.text = "\(defaultValue)"
