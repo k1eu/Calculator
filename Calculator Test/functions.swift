@@ -74,7 +74,7 @@ class calculatorCore {
     var previousChar :String = ""
     var previousValue = ""
     var output : Double = 0
-    let charset : [String] = ["AC","+/-","%","/","X","-","+","Error","="]
+    let charset : [String] = ["AC","+/-","%","/","X","-","+","Error","=",".",","]
     
     func numberPressed(sender: UIButton,result: UILabel) {
         previousValue = result.text!
@@ -120,8 +120,22 @@ class calculatorCore {
                 }
                 else {
                 firstNumber = Double(result.text!) as! Double
+                    print("liczba1: \(firstNumber)")
                 char = sender.titleLabel!.text!
+                    print(char)
                 result.text = char }
+            case 19:
+                if charset.contains(result.text!)    {
+                    char = sender.titleLabel!.text!
+                    result.text = char
+                }
+                else if result.text?.last == "." {
+                    result.text = previousValue
+                }
+                else {
+                    
+                    result.text = "\(previousValue)." }
+                
             case 18:
                 if charset.contains(result.text!) {
                     char = sender.titleLabel!.text!
@@ -130,6 +144,7 @@ class calculatorCore {
                 else
                 {
                 secondNumber = Double(result.text!) as! Double
+                    print("liczba2: \(secondNumber)")
                 switch char {
                 case "%":
                     print("XD")
@@ -185,20 +200,21 @@ class calculatorCore {
                     result.text = "\(output)"
                         firstNumberHolder = output
                     default:
-                        print("xd")
-                    }
-                
+                        print("Error")
+                    } // end of = switch
+                    
                 default:
                     result.text = "Error"
-                    }}
+                    }} // end of char 
+            
             default:
-                print("xd")
+                print("Error")
                 
             }
         }
-        print(char)
-        print("liczba1: \(firstNumber)")
-        print("liczba2: \(secondNumber)")
+        
+        
+        
         print("wynik: \(output)")
         
     }

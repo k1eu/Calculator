@@ -232,13 +232,16 @@
                                                     <action selector="numbers:" destination="BYZ-38-t0r" eventType="touchUpInside" id="bvS-5P-Z7Y"/>
                                                 </connections>
                                             </button>
-                                            <button opaque="NO" tag="19" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lxU-Nu-yM8">
+                                            <button opaque="NO" tag="19" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lxU-Nu-yM8">
                                                 <rect key="frame" x="146.5" y="0.0" width="58" height="58"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" secondItem="lxU-Nu-yM8" secondAttribute="height" multiplier="1:1" id="0uv-Ma-jfV"/>
                                                 </constraints>
                                                 <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                                 <state key="normal" title=","/>
+                                                <connections>
+                                                    <action selector="functionKeys:" destination="BYZ-38-t0r" eventType="touchUpInside" id="3Kv-mk-hhZ"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" tag="18" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FZL-7F-6qf">
                                                 <rect key="frame" x="222" y="0.0" width="58" height="58"/>
