@@ -40,7 +40,7 @@
                                                     <action selector="functionKeys:" destination="BYZ-38-t0r" eventType="touchUpInside" id="RBw-Wc-1U1"/>
                                                 </connections>
                                             </button>
-                                            <button opaque="NO" tag="12" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zpk-E7-g3u">
+                                            <button opaque="NO" tag="12" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zpk-E7-g3u">
                                                 <rect key="frame" x="74.5" y="0.0" width="56.5" height="56.5"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" secondItem="zpk-E7-g3u" secondAttribute="height" multiplier="1:1" id="SFq-IS-syg"/>

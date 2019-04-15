@@ -46,7 +46,7 @@ class setups {
         logoView.translatesAutoresizingMaskIntoConstraints = false // this shit is importand , dunno what it does actually
         view.view.addSubview(logoView)
         logoView.topAnchor.constraint(equalTo: view.view.safeAreaLayoutGuide.topAnchor).isActive = true
-        logoView.leadingAnchor.constraint(equalTo: view.view.safeAreaLayoutGuide.leadingAnchor,constant: 10).isActive = true
+        logoView.leadingAnchor.constraint(equalTo: view.view.safeAreaLayoutGuide.leadingAnchor,constant: 20).isActive = true
         logoView.widthAnchor.constraint(equalToConstant: 50.0).isActive = true
         logoView.heightAnchor.constraint(equalToConstant: 50.0).isActive = true
         
@@ -113,6 +113,17 @@ class calculatorCore {
                 char = ""
             case 12:
                 print("change to minus")
+                if charset.contains(result.text!)    {
+                    print("xd")
+                }
+                else {
+                    let previous = result.text!
+                    if previous.first == "-" {
+                        result.text! = String(previous.dropFirst())
+                        print(result.text!)
+                    }
+                    else {
+                        result.text = "-\(previous) "}}
             case 13...17:
                 if charset.contains(result.text!)    {
                     char = sender.titleLabel!.text!
