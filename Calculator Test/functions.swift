@@ -66,14 +66,14 @@ class setups {
 }
 class calculatorCore {
     var defaultValue: Double = 0
-    var firstNumber:Double = 0
-    var firstNumberHolder: Double = 0
-    var secondNumber:Double = 0
-    var secondNumberHolder: Double = 0
+    var firstNumber:Decimal = 0
+    var firstNumberHolder: Decimal = 0
+    var secondNumber:Decimal = 0
+    var secondNumberHolder: Decimal = 0
     var char:String = ""
     var previousChar :String = ""
     var previousValue = ""
-    var output : Double = 0
+    var output : Decimal = 0
     let charset : [String] = ["AC","+/-","%","/","X","-","+","Error","=",".",","]
     
     func numberPressed(sender: UIButton,result: UILabel) {
@@ -119,7 +119,7 @@ class calculatorCore {
                     result.text = char
                 }
                 else {
-                firstNumber = Double(result.text!) as! Double
+                    firstNumber = Decimal(string: result.text!)!
                     print("liczba1: \(firstNumber)")
                 char = sender.titleLabel!.text!
                     print(char)
@@ -143,7 +143,7 @@ class calculatorCore {
                 }
                 else
                 {
-                secondNumber = Double(result.text!) as! Double
+                    secondNumber = Decimal(string:result.text!)!
                     print("liczba2: \(secondNumber)")
                 switch char {
                 case "%":
