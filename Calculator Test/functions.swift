@@ -253,5 +253,8 @@ class calculatorCore {
         print("wynik: \(output)")
         
     }
+    func dropsonLast(result:UILabel) {
+        result.text = String((result.text?.dropLast())!)
+    }
     }
 

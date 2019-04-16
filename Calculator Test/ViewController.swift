@@ -30,8 +30,20 @@ class ViewController: UIViewController {
         settingUps.setbuttons(numbers: buttons, functions: buttonses)
         settingUps.setLabel(result: result, resultNumber: 0)
         settingUps.setLogo(view: self,button: result)
+        let swipe = UISwipeGestureRecognizer(target: self, action: #selector(swipeAction(swipe:)))
+        swipe.direction = UISwipeGestureRecognizer.Direction.right
+        self.view.addGestureRecognizer(swipe)
+        
     }
+ 
 
-   
-}
+    @objc func swipeAction(swipe:UISwipeGestureRecognizer) {
+        switch swipe.direction.rawValue {
+        case 1:
+            print("works?")
+            core.dropsonLast(result:result)
+        default:
+            break
+        }
+    }}
 
