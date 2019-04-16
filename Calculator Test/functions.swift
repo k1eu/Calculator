@@ -124,7 +124,31 @@ class calculatorCore {
                     }
                     else {
                         result.text = "-\(previous) "}}
-            case 13...17:
+            case 13:
+                if charset.contains(result.text!)    {
+                    char = sender.titleLabel!.text!
+                    result.text = char
+                }
+                else {
+                    secondNumber = Decimal(string:result.text!)!
+                    switch char {
+                    case "/":
+                        output = firstNumber / (secondNumber * 0.01)
+                        result.text = "\(output)"
+                    case "X":
+                        output = firstNumber * (secondNumber * 0.01)
+                        result.text = "\(output)"
+                    case "-":
+                        output = firstNumber - (secondNumber * 0.01)*firstNumber
+                        result.text = "\(output)"
+                    case "+":
+                        output = firstNumber + (secondNumber * 0.01)*firstNumber
+                        result.text = "\(output)"
+                    default:
+                        result.text = "Error"
+                    }
+                }
+            case 14...17:
                 if charset.contains(result.text!)    {
                     char = sender.titleLabel!.text!
                     result.text = char
