@@ -59,13 +59,13 @@ class setups {
             logoView.transform = CGAffineTransform.identity.scaledBy(x: 1, y: 1)
         })
     }
-    func setLabel(result:UILabel,resultNumber: Double) {
+    func setLabel(result:UILabel,resultNumber: Int) {
         result.text = "\(resultNumber)"
         result.textColor = .white
     }
 }
 class calculatorCore {
-    var defaultValue: Double = 0
+    var defaultValue: Int = 0
     var firstNumber:Decimal = 0
     var firstNumberHolder: Decimal = 0
     var secondNumber:Decimal = 0
@@ -80,7 +80,7 @@ class calculatorCore {
         previousValue = result.text!
         let pressedValue = sender.titleLabel?.text
         // result.text = NSString(format: "\(previ)%i", value!) as String
-        if previousValue == String(0.0) || previousValue == "Error"  || previousValue == char {
+        if previousValue == String(0)||previousValue==String(0.0) || previousValue == "Error"  || previousValue == char || char == "=" {
             result.text = "\(pressedValue!)"
         }
         else {
