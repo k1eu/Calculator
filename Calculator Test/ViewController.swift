@@ -32,7 +32,9 @@ class ViewController: UIViewController {
         settingUps.setLogo(view: self,button: result)
         let swipe = UISwipeGestureRecognizer(target: self, action: #selector(swipeAction(swipe:)))
         swipe.direction = UISwipeGestureRecognizer.Direction.right
-        self.view.addGestureRecognizer(swipe)
+   
+        result.isUserInteractionEnabled = true
+        result.addGestureRecognizer(swipe)
         
     }
  
